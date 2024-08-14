@@ -879,8 +879,22 @@ main {
 
 /*-----------------------------------*\
   #PORTFOLIO
-\*-----------------------------------*/
+/* General Styles */
+:root {
+  --eerie-black-2: #1a1a1a;
+  --light-gray: #b3b3b3;
+  --jet: #2d2d2d;
+  --white-2: #ffffff;
+  --light-gray-70: rgba(179, 179, 179, 0.7);
+  --fs-6: 16px;
+  --fs-5: 18px;
+  --fw-300: 300;
+  --fw-400: 400;
+  --transition-1: 0.3s ease;
+  --orange-yellow-crayola: #ffcc00;
+}
 
+/* Filter Select Box */
 .filter-list { display: none; }
 
 .filter-select-box {
@@ -900,6 +914,8 @@ main {
   border-radius: 14px;
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .filter-select.active .select-icon { transform: rotate(0.5turn); }
@@ -916,7 +932,7 @@ main {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out;
 }
 
 .filter-select.active + .select-list {
@@ -932,12 +948,27 @@ main {
   font-weight: var(--fw-300);
   text-transform: capitalize;
   width: 100%;
-  padding: 8px 10px;
+  padding: 10px 15px; /* Enhanced padding for better button look */
   border-radius: 8px;
+  border: 1px solid var(--jet); /* Added border for better distinction */
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
 }
 
-.select-item button:hover { --eerie-black-2: hsl(240, 2%, 20%); }
+.select-item button:hover { 
+  background: hsl(240, 2%, 25%); /* Slightly lighter background on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
 
+.select-item button:active {
+  background: hsl(240, 2%, 20%); /* Darker background when active */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced shadow on click */
+  transform: translateY(0); /* Button returns to normal position */
+}
+
+/* Project List Styles */
 .project-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -957,6 +988,7 @@ main {
   100% { transform: scale(1); }
 }
 
+/* Project Item Link and Image */
 .project-item > a { width: 100%; }
 
 .project-img {
@@ -984,7 +1016,6 @@ main {
 
 .project-item-icon-box {
   --scale: 0.8;
-
   background: var(--jet);
   color: var(--orange-yellow-crayola);
   position: absolute;
@@ -1015,6 +1046,7 @@ main {
 
 .project-item > a:hover img { transform: scale(1.1); }
 
+/* Project Title and Category */
 .project-title,
 .project-category { margin-left: 10px; }
 
@@ -1031,7 +1063,9 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
 }
-
+.btn{
+  border: 2px solid white;
+}
 
 
 
@@ -1886,3 +1920,38 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+
+/* General Button Styling */
+.btn {
+  padding: 10px 20px;
+  background-color: #435544; /* Green background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-left: 10px;
+}
+
+.btn:hover {
+  background-color: #1d3a1e; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.btn:active {
+  background-color: #3e8e41; /* Even darker green when pressed */
+  transform: scale(0.98); /* Slightly shrink the button when pressed */
+}
+
+/* Icon within the button */
+.btn ion-icon {
+  font-size: 18px;
+}
+
+/* Project Item Styling */

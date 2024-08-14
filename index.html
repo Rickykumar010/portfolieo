@@ -42,7 +42,7 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/rickyyyyyyyyyyyyeeeee.jpg" alt="Ricky Kumar" width="80" style="border-radius: 10px;">
+          <img src="./assets/images/profile.jpg" alt="Ricky Kumar" width="80" style="border-radius: 10px;">
         </figure>
 
         <div class="info-content">
@@ -74,7 +74,7 @@
             <div class="contact-info">
               <p class="contact-title">Email</p>
 
-              <a href="mailto:richard@example.com" class="contact-link">rickykumar26400@gmail.com</a>
+              <a href="mailto:rickykumar26400@gmail.com" class="contact-link">rickykumar26400@gmail.com</a>
             </div>
 
           </li>
@@ -133,14 +133,14 @@
           </li>
 
           <li class="social-item">
-            <a href="#" class="social-link">
+            <a href="https://www.linkedin.com/in/ricky-kumar-8744242a2" class="social-link">
               <ion-icon name="logo-linkedin"></ion-icon>
 
             </a>
           </li>
 
           <li class="social-item">
-            <a href="#" class="social-link">
+            <a href="https://github.com/Rickykumar010" class="social-link">
               <ion-icon name="logo-github"></ion-icon>
             </a>
           </li>
@@ -525,17 +525,33 @@
       
           </ol>
       
-          <!-- Add the link to download the resume -->
+          <!-- Add the button to view and download the resume -->
           <div style="margin-top: 40px;">
-            <a href="./assets/images/RickyKumar-FullStackWebDeveloper-mJPv (1).pdf" download="RickyKumar-FullStackWebDeveloper-mJPv.pdf" class="h4 timeline-item-title">
-              <button style="padding: 10px; background-color: brown; border-radius: 5px;"><ion-icon name="download-outline"></ion-icon></button> Download My Resume
-            </a>
+            <button id="viewAndDownloadResume" style="padding: 10px; background-color: rgb(55,12,12); border-radius: 5px; color: white; border: 0.4px solid ;" class="btn">
+              <ion-icon name="eye-outline"></ion-icon> See My Resume
+            </button>
           </div>
-          
       
         </section>
       
       </article>
+      
+      <script>
+        document.getElementById('viewAndDownloadResume').addEventListener('click', function() {
+          const pdfUrl = './assets/images/ricky.pdf';
+          
+          // Open the PDF in a new tab
+          window.open(pdfUrl, '_blank');
+      
+          // Trigger the download
+          const link = document.createElement('a');
+          link.href = pdfUrl;
+          link.download = 'RickyKumar-FullStackWebDeveloper-mJPv.pdf';
+          link.click();
+        });
+      </script>
+      
+
       
 
 
@@ -545,187 +561,202 @@
       <!--
         - #PORTFOLIO
       -->
-
       <article class="project" data-page="project">
 
         <header>
           <h2 class="h2 article-title">Portfolio</h2>
         </header>
-
+      
         <section class="projects">
-
+      
           <ul class="filter-list">
-
+      
             <li class="filter-item">
-              <button class="active" data-filter-btn>projects</button>
+              <button class="active" data-filter-btn>Projects</button>
             </li>
-
-            <li class="filter-item">
-              <button data-filter-btn></button>
-            </li>
-
+      
             <li class="filter-item">
               <button data-filter-btn></button>
             </li>
-
+      
             <li class="filter-item">
               <button data-filter-btn></button>
             </li>
-
+      
+            <li class="filter-item">
+              <button data-filter-btn></button>
+            </li>
+      
           </ul>
-
+      
           <div class="filter-select-box">
-
+      
             <button class="filter-select" data-select>
-
+      
               <div class="select-value" data-selecct-value>Select category</div>
-
+      
               <div class="select-icon">
                 <ion-icon name="chevron-down"></ion-icon>
               </div>
-
+      
             </button>
-
+      
             <ul class="select-list">
-
+      
               <li class="select-item">
                 <button data-select-item>All</button>
               </li>
-
+      
               <li class="select-item">
                 <button data-select-item>Web design</button>
               </li>
-
+      
               <li class="select-item">
                 <button data-select-item>Applications</button>
               </li>
-
+      
               <li class="select-item">
                 <button data-select-item>Web development</button>
               </li>
-
+      
             </ul>
-
+      
           </div>
-
+      
           <ul class="project-list">
-
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="https://github.com/Amrit-786/Travel-Trakerrs">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/Travel.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Travel-Trakerrs</h3>
-
-                <p class="project-category">* Travel Trakker is a premier travel agency dedicated to providing personalized and memorable tours across India </p>
-
-              </a>-
+      
+            <li class="project-item active" data-filter-item data-category="applications">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/Travel.png" alt="Travel Trakker" loading="lazy">
+              </figure>
+      
+              <h3 class="project-title">Travel-Trakerrs</h3>
+              <p class="project-category">* Travel Trakker is a premier travel agency dedicated to providing personalized and memorable tours across India</p>
+      
+              <div style="display: flex; justify-content: space-around;">
+                <button onclick="window.open('https://github.com/Amrit-786/Travel-Trakerrs', '_blank')" class="btn">
+                  <ion-icon name="logo-github"></ion-icon> Git Hub
+                </button>
+                <button onclick="window.open('https://traveltrakkers.vercel.app/', '_blank')" class="btn">
+                  <ion-icon name="globe-outline"></ion-icon> See Live
+                </button>
+              </div>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="https://github.com/vishalkr-1/Ghaghara-Compilation-013">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/Frank.png" alt="dsm." style="height: 110px;">
-                </figure>
-
-                <h3 class="project-title">Frank And Oak</h3>
-
-                <p class="project-category">* Frank And Oak is an online fashion retailer that offers stylish and sustainable clothing for men and women </p>
-
-              </a>
+      
+            <li class="project-item active" data-filter-item data-category="web design">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/Frank.png" alt="Frank And Oak" style="height: 110px;">
+              </figure>
+      
+              <h3 class="project-title">Frank And Oak</h3>
+              <p class="project-category">* Frank And Oak is an online fashion retailer that offers stylish and sustainable clothing for men and women</p>
+      
+              <div style="display: flex; justify-content: space-around;">
+                <button onclick="window.open('https://github.com/vishalkr-1/Ghaghara-Compilation-013', '_blank')" class="btn">
+                  <ion-icon name="logo-github"></ion-icon> Git Hub
+                </button>
+                <button onclick="window.open('https://6641c4a6f60fc17bdb89b7db--cheery-genie-3d5d23.netlify.app/', '_blank')" class="btn">
+                  <ion-icon name="globe-outline"></ion-icon> See Live
+                </button>
+              </div>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="https://github.com/vishalkr-1/Ghaghara-Compilation-013">
-
-                <figure class="project-img" >
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/oke.png" alt="" style="height: 110px;">
-                </figure>
-
-                <h3 class="project-title">Frank And Oak</h3>
-
-                <p class="project-category">* Frank And Oak is an online fashion retailer that 
-                  offers stylish and sustainable clothing for men and women</p>
-
-              </a>
+      
+            <li class="project-item active" data-filter-item data-category="web design">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/oke.png" alt="Frank And Oak" style="height: 110px;">
+              </figure>
+      
+              <h3 class="project-title">Frank And Oak</h3>
+              <p class="project-category">* Frank And Oak is an online fashion retailer that offers stylish and sustainable clothing for men and women</p>
+      
+              <div style="display: flex; justify-content: space-around;">
+                <button onclick="window.open('https://github.com/vishalkr-1/Ghaghara-Compilation-013', '_blank')" class="btn">
+                  <ion-icon name="logo-github"></ion-icon> Git Hub
+                </button>
+                <button onclick="window.open('https://6641c4a6f60fc17bdb89b7db--cheery-genie-3d5d23.netlify.app/', '_blank')" class="btn">
+                  <ion-icon name="globe-outline"></ion-icon> See Live
+                </button>
+              </div>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://github.com/kajal-kumari03/Js-204">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/travelWith.png" alt="" style="height: 110px;">
-                </figure>
-
-                <h3 class="project-title">Travel with us</h3>
-
-                <p class="project-category"> *Travel With Us is an online travel agency and accommodation booking platform that facilitates users in finding and booking accommodations
-                   worldwide</p>
-
-              </a>
+      
+            <li class="project-item active" data-filter-item data-category="web development">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/travelWith.png" alt="Travel with us" style="height: 110px;">
+              </figure>
+      
+              <h3 class="project-title">Travel with us</h3>
+              <p class="project-category">* Travel With Us is an online travel agency and accommodation booking platform that facilitates users in finding and booking accommodations worldwide</p>
+      
+              <div style="display: flex; justify-content: space-around;">
+                <button onclick="window.open('https://github.com/kajal-kumari03/Js-204', '_blank')" class="btn">
+                  <ion-icon name="logo-github"></ion-icon> Git Hub
+                </button>
+                <button onclick="window.open('https://660fab659e3ab0620641652b--inspiring-shortbread-b1fc7e.netlify.app/', '_blank')" class="btn">
+                  <ion-icon name="globe-outline"></ion-icon> See Live
+                </button>
+              </div>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="https://github.com/jayantjagtap001/CW-Project-G1?tab=readme-ov-file">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/leno.png" alt="" style="height: 110px;">
-                </figure>
-
-                <h3 class="project-title">Leno Flex</h3>
-
-                <p class="project-category">This project is a clone of the homepage of Lenovo, a popular online shop. This project aims to recreate the visual layout and design of the original website's homepage.</p>
-
-              </a>
+      
+            <li class="project-item active" data-filter-item data-category="applications">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/leno.png" alt="Leno Flex" style="height: 110px;">
+              </figure>
+      
+              <h3 class="project-title">Leno Flex</h3>
+              <p class="project-category">This project is a clone of the homepage of Lenovo, a popular online shop. This project aims to recreate the visual layout and design of the original website's homepage.</p>
+      
+              <div style="display: flex; justify-content: space-around;">
+                <button onclick="window.open('https://github.com/jayantjagtap001/CW-Project-G1?tab=readme-ov-file', '_blank')" class="btn">
+                  <ion-icon name="logo-github"></ion-icon> Git Hub
+                </button>
+                <button onclick="window.open('https://lenoflex.netlify.app/', '_blank')" class="btn">
+                  <ion-icon name="globe-outline"></ion-icon> See Live
+                </button>
+              </div>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://github.com/jayantjagtap001/CW-Project-G1?tab=readme-ov-file">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/figma.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">FIGMA-DESIGN</h3>
-
-                <p class="project-category">In the pixel-perfect Figma design, the layout is meticulously crafted for precision and visual harmony</p>
-
-              </a>
+      
+            <li class="project-item active" data-filter-item data-category="web development">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="./assets/images/figma.png" alt="FIGMA-DESIGN" loading="lazy">
+              </figure>
+      
+              <h3 class="project-title">FIGMA-DESIGN</h3>
+              <p class="project-category">In the pixel-perfect Figma design, the layout is meticulously crafted for precision and visual harmony</p>
+      
+              <div style="display: flex; justify-content: space-around;">
+                <button onclick="window.open('https://github.com/jayantjagtap001/CW-Project-G1?tab=readme-ov-file', '_blank')" class="btn">
+                  <ion-icon name="logo-github"></ion-icon> Git Hub
+                </button>
+                <button onclick="window.open('https://figmagroup1.netlify.app/', '_blank')" class="btn">
+                  <ion-icon name="globe-outline"></ion-icon> See Live
+                </button>
+              </div>
             </li>
-
+      
           </ul>
-
+      
         </section>
-
+      
       </article>
+      
 
 
 
